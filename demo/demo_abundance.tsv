@@ -1,1 +1,81 @@
-sample, species, abundance
+sample	species	abundance
+2526-007_barcode18	Aerococcus christensenii	1.13012498539903
+2526-007_barcode18	Amygdalobacter indicium	3.48090113691674
+2526-007_barcode18	Fannyhessea vaginae	8.94295553221371
+2526-007_barcode18	Gardnerella swidsinskii	36.711376684468775
+2526-007_barcode18	Gardnerella vaginalis	14.41075532248882
+2526-007_barcode18	Hoylesella timonensis	2.13578368629015
+2526-007_barcode18	Lactobacillus iners	8.051020576503829
+2526-007_barcode18	Megasphaera lornae	10.37437752423673
+2526-007_barcode18	Other species < 1%	4.83384730148716
+2526-007_barcode18	Prevotella amnii	8.89801973104193
+2526-007_barcode18	Sneathia sanguinegens	1.03083751895374
+2526-007_barcode19	Lactobacillus iners	96.27101714666225
+2526-007_barcode19	Other species < 1%	0.18311969369069
+2526-007_barcode19	Streptococcus agalactiae	2.0247034549948197
+2526-007_barcode19	Streptococcus sp. FDAARGOS_522	1.52115970465224
+2526-007_barcode20	Lactobacillus crispatus	97.60407119522704
+2526-007_barcode20	Lactobacillus jensenii	2.3711637469659896
+2526-007_barcode20	Other species < 1%	0.02476505780685
+2526-007_barcode21	Anaerococcus tetradius	5.67539301568979
+2526-007_barcode21	Berryella wangjianweii	5.49397468844336
+2526-007_barcode21	Dialister invisus	1.37824149657532
+2526-007_barcode21	Dialister micraerophilus	1.33988550140385
+2526-007_barcode21	Fannyhessea vaginae	8.27606914642815
+2526-007_barcode21	Gardnerella swidsinskii	13.1671170850305
+2526-007_barcode21	Gardnerella vaginalis	13.035040680752399
+2526-007_barcode21	Hoylesella timonensis	3.5625592248147098
+2526-007_barcode21	Other species < 1%	4.46384970545242
+2526-007_barcode21	Peptoniphilus genitalis	2.71508014393195
+2526-007_barcode21	Peptostreptococcus anaerobius	5.46930625171931
+2526-007_barcode21	Prevotella bivia	26.165575968931808
+2526-007_barcode21	Prevotella disiens	5.07079554355779
+2526-007_barcode21	Sneathia sanguinegens	4.18711154726856
+2526-007_barcode22	Bacillus spizizenii	16.90707525813717
+2526-007_barcode22	Bacillus subtilis	2.00020499245885
+2526-007_barcode22	Enterococcus faecalis	10.56673956516022
+2526-007_barcode22	Escherichia coli	9.69310941143907
+2526-007_barcode22	Limosilactobacillus fermentum	12.505280363940068
+2526-007_barcode22	Listeria monocytogenes	14.699086572140779
+2526-007_barcode22	Other species < 1%	1.78399910848404
+2526-007_barcode22	Pseudomonas aeruginosa	3.92876868883478
+2526-007_barcode22	Salmonella enterica	10.300720955183799
+2526-007_barcode22	Staphylococcus aureus	17.615015084221138
+2526-007_barcode23	Actinomyces oris	1.40845070422535
+2526-007_barcode23	Anaerococcus nagyae	1.40845070422535
+2526-007_barcode23	Aquabacterium commune	2.81690215949606
+2526-007_barcode23	Caldimonas brevitalea	1.4084499531799899
+2526-007_barcode23	Corynebacterium amycolatum	4.22535211267605
+2526-007_barcode23	Corynebacterium phoceense	4.22535211267605
+2526-007_barcode23	Cutibacterium acnes	26.76056338028169
+2526-007_barcode23	Cutibacterium granulosum	2.8169014084507
+2526-007_barcode23	Finegoldia magna	7.042253521126759
+2526-007_barcode23	Hoylesella timonensis	1.40845070422535
+2526-007_barcode23	Lactobacillus crispatus	30.985915492957737
+2526-007_barcode23	Lactobacillus iners	1.40845070422535
+2526-007_barcode23	Lactobacillus jensenii	1.40845070422535
+2526-007_barcode23	Megasphaera lornae	1.40845070422535
+2526-007_barcode23	Pantoea eucrina	1.40845070422535
+2526-007_barcode23	Pelomonas cellulosilytica	1.39947141208169
+2526-007_barcode23	Roseateles saccharophilus	1.417429996369
+2526-007_barcode23	Staphylococcus epidermidis	1.40845070422535
+2526-007_barcode23	Streptococcus gordonii	2.8169014084507
+2526-007_barcode23	Streptococcus sp. oral taxon 431	1.40845070422535
+2526-007_barcode23	Vibrio scophthalmi	1.40845070422535
+2526-007_unclassified	Bacillus spizizenii	2.3633897086672
+2526-007_unclassified	Enterococcus faecalis	1.43887188688913
+2526-007_unclassified	Escherichia coli	1.27672594509306
+2526-007_unclassified	Fannyhessea vaginae	1.12386785193222
+2526-007_unclassified	Gardnerella swidsinskii	4.36677383685463
+2526-007_unclassified	Gardnerella vaginalis	2.0142224498606
+2526-007_unclassified	Lactobacillus crispatus	63.760464470077046
+2526-007_unclassified	Lactobacillus iners	5.52633658299247
+2526-007_unclassified	Lactobacillus jensenii	1.69624527308065
+2526-007_unclassified	Limosilactobacillus fermentum	1.7221330208714198
+2526-007_unclassified	Listeria monocytogenes	2.70777652352746
+2526-007_unclassified	Megasphaera lornae	1.09640626726842
+2526-007_unclassified	Other species < 1%	4.47672219524734
+2526-007_unclassified	Salmonella enterica	1.61933702128632
+2526-007_unclassified	Staphylococcus aureus	3.3202092644264796
+2526-007_unclassified	Vibrio scophthalmi	1.49051770192554
+
