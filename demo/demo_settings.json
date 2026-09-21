@@ -1,0 +1,15 @@
+{
+  "filter_mode": "topn",
+  "top_n": 50,
+  "min_pct": 1,
+  "bar_width": 0.9,
+  "palette": "Tableau (categorical)",
+  "fontsize": 14,
+  "fig_width": 1300,
+  "fig_height": 1000,
+  "legend_pos": "hidden",
+  "xangle": 0,
+  "ytitle": "Demo relative abundance (%)",
+  "plot_title": "Demo title",
+  "group": "ATLS"
+}
