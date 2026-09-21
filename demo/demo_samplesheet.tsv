@@ -1,8 +1,8 @@
-sample	samplename	group
-2526-007_barcode18	ATLS1	ATLS
-2526-007_barcode19	ATLS2	ATLS
-2526-007_barcode20	ATLS3	ATLS
-2526-007_barcode21	Breda1	Breda
-2526-007_barcode22	Breda2	Breda
-2526-007_barcode23	Breda3	Out
-2526-007_unclassified	Unclassified	Out
+sample	samplename	group	mapped	unclassified_mapped	unmapped
+2526-007_barcode18	ATLS1	ATLS,Breda	34282	16	11
+2526-007_barcode19	ATLS2	ATLS	6026	47	9
+2526-007_barcode20	ATLS3	ATLS	76782	9	25
+2526-007_barcode21	Breda1	Breda	3141	12	3
+2526-007_barcode22	Breda2	Breda	23748	22	14
+2526-007_barcode23	Breda3	Out,ATLS	74	8	4
+2526-007_unclassified	Unclassified	Out	18115	18	34
