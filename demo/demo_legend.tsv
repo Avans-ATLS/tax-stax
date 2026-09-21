@@ -1,1 +1,50 @@
-species  color
+species	color
+Lactobacillus crispatus	#e79df7
+Lactobacillus iners	#ee9720
+Gardnerella swidsinskii	#94ede2
+Gardnerella vaginalis	#D62728
+Cutibacterium acnes	#9467BD
+Prevotella bivia	#b6efad
+Staphylococcus aureus	#E377C2
+Bacillus spizizenii	#7F7F7F
+Fannyhessea vaginae	#BCBD22
+Listeria monocytogenes	#17BECF
+Other species < 1%	#AEC7E8
+Limosilactobacillus fermentum	#FFBB78
+Megasphaera lornae	#98DF8A
+Enterococcus faecalis	#FF9896
+Salmonella enterica	#C5B0D5
+Escherichia coli	#C49C94
+Prevotella amnii	#F7B6D2
+Hoylesella timonensis	#C7C7C7
+Finegoldia magna	#DBDB8D
+Anaerococcus tetradius	#9EDAE5
+Berryella wangjianweii	#1F77B4
+Lactobacillus jensenii	#FF7F0E
+Peptostreptococcus anaerobius	#2CA02C
+Sneathia sanguinegens	#D62728
+Prevotella disiens	#9467BD
+Corynebacterium amycolatum	#8C564B
+Corynebacterium phoceense	#E377C2
+Pseudomonas aeruginosa	#7F7F7F
+Amygdalobacter indicium	#BCBD22
+Vibrio scophthalmi	#17BECF
+Aquabacterium commune	#AEC7E8
+Cutibacterium granulosum	#FFBB78
+Streptococcus gordonii	#98DF8A
+Peptoniphilus genitalis	#FF9896
+Streptococcus agalactiae	#C5B0D5
+Bacillus subtilis	#C49C94
+Streptococcus sp. FDAARGOS_522	#F7B6D2
+Roseateles saccharophilus	#C7C7C7
+Anaerococcus nagyae	#DBDB8D
+Actinomyces oris	#9EDAE5
+Staphylococcus epidermidis	#1F77B4
+Pantoea eucrina	#FF7F0E
+Streptococcus sp. oral taxon 431	#2CA02C
+Caldimonas brevitalea	#D62728
+Pelomonas cellulosilytica	#9467BD
+Dialister invisus	#8C564B
+Dialister micraerophilus	#E377C2
+Aerococcus christensenii	#7F7F7F
+Other	#a0ebf8
