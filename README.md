@@ -7,7 +7,7 @@
 -->
 
 
-# tax-stax
+# Tax-Stax
 Interactive Dash app for building customizable stacked barplots of relative abundance data, with sample ordering, color legend editing, grouping, and HTML/settings export.
 
 ---
@@ -33,7 +33,7 @@ Interactive Dash app for building customizable stacked barplots of relative abun
 ## Screenshots
 ---
 
-## Using tax-stax
+## Using TaxStax
 To use the tool, there are 2 options. Either visit [atls-tools.org](https://www.atls-tools.org/taxastacks/) to start using it immediately, or clone the source code and run the app locally.
 
 ### Via atls-tools.org
@@ -91,15 +91,15 @@ When supplied with multiple abundance TSVs, tax-stax will visualize all samples 
 
 ## Testing the app with demo data
 
-Demo files are provided in the `demo/` folder: `demo_abundance.tsv`, `demo_samplesheet.tsv`, and `demo_legend.tsv`.
+Demo files are provided in the [demo folder](https://github.com/Avans-ATLS/tax-stax/blob/main/demo/): [`demo_abundance.tsv`](https://github.com/Avans-ATLS/tax-stax/blob/main/demo/demo_abundance.tsv), [`demo_samplesheet.tsv`](https://github.com/Avans-ATLS/tax-stax/blob/main/demo/demo_samplesheet.tsv), and [`demo_legend.tsv`](https://github.com/Avans-ATLS/tax-stax/blob/main/demo/demo_legend.tsv).
 
 1. Open the app in your browser.
-2. Upload `demo/demo_abundance.tsv` under **Data upload → Abundance TSV(s)**. The plot should render immediately with default settings.
-3. Upload `demo/demo_samplesheet.tsv` under **Samplesheet TSV**. Sample names in the plot should update, and the **Group** dropdown should now list the groups from the samplesheet.
+2. Upload [`demo/demo_abundance.tsv`](https://github.com/Avans-ATLS/tax-stax/blob/main/demo/demo_abundance.tsv) under **Data upload → Abundance TSV(s)**. The plot should render immediately with default settings.
+3. Upload [`demo/demo_samplesheet.tsv`](https://github.com/Avans-ATLS/tax-stax/blob/main/demo/demo_samplesheet.tsv) under **Samplesheet TSV**. Sample names in the plot should update, and the **Group** dropdown should now list the groups from the samplesheet.
 4. Select a group from the **Group** dropdown and confirm the plot and sample order list update to show only that group's samples.
 5. Use the ▲/▼ buttons under **Sample order** to reorder a couple of samples and confirm the plot x-axis follows the new order.
 6. Switch **Species filter** from Top N to Min abundance (%) and back, adjusting the values, and confirm species are merged into "Other" as expected.
-7. Upload `demo/demo_legend.tsv` under **Color legend TSV** and confirm the specified species take on the fixed colors.
+7. Upload [`demo/demo_legend.tsv`](https://github.com/Avans-ATLS/tax-stax/blob/main/demo/demo_legend.tsv) under **Color legend TSV** and confirm the specified species take on the fixed colors.
 8. Change a color manually in the **Legend colors** editor on the right and confirm the plot updates live.
 9. Try a different **Color palette** and confirm unassigned species get new colors while legend-fixed species keep theirs.
 10. Adjust bar width, font size, figure size, legend position, x-axis rotation, y-axis title, and plot title, confirming each updates the plot.
