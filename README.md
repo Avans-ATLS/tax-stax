@@ -146,6 +146,6 @@ Demo files are provided in the [demo folder](https://github.com/Avans-ATLS/tax-s
 14. Click **Download legend TSV** and confirm the exported file matches the colors currently shown in the legend editor.
 
 # License
-[MIT license](https://github.com/Avans-ATLS/tax-stax/blob/main/LICENSE)
+[GNU GPL-3.0 license](https://github.com/Avans-ATLS/tax-stax/blob/main/LICENSE)
 ---
 Developed by Birgit Rijvers-van Pruissen for the ATLS lectorate, Avans University of Applied Sciences.
