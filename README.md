@@ -5,6 +5,8 @@
 # Tax-Stax
 Interactive Dash app for building customizable stacked barplots of relative abundance data, with sample ordering, color legend editing, grouping, and HTML/settings export.
 
+![homepage screenshot with loaded demo data](https://github.com/Avans-ATLS/tax-stax/blob/main/screenshots/demo_abu_ssheet_legend.png)
+
 ## Features
 
 - Upload one or more abundance TSVs
