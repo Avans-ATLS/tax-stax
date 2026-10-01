@@ -2,10 +2,18 @@
 - Support for EMU combined files
 - Add screenshots (images/) (main interface, legend editor, export)
 -->
-# Tax-Stax
+
+# TaxStax
+![Tax-Stax](https://github.com/Avans-ATLS/tax-stax/blob/main/src/taxstax/assets/logo_text.png)
+
 Interactive Dash app for building customizable stacked barplots of relative abundance data, with sample ordering, color legend editing, grouping, and HTML/settings export.
 
 ![homepage screenshot with loaded demo data](https://github.com/Avans-ATLS/tax-stax/blob/main/screenshots/demo_abu_ssheet_legend.png)
+
+Alpha diversity             |  Beta diversity
+:-------------------------:|:-------------------------:
+![alpha diversity demo screenshot](https://github.com/Avans-ATLS/tax-stax/blob/main/screenshots/taxstax_alpha_demo.png)  |  ![beta diversity demo screenshot](https://github.com/Avans-ATLS/tax-stax/blob/main/screenshots/taxstax_beta_demo.png)
+
 
 ## Features
 
