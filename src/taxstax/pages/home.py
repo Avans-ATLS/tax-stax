@@ -1,5 +1,6 @@
 """
 Upload / landing page: abundance, samplesheet, and color-legend uploads.
+Download combined files in long or wide format. Wide format for easy Excel viz.
 Plot customization lives on the TaxStax page (pages/taxstax.py).
 """
 
@@ -9,6 +10,10 @@ from dash import Input, Output, State, callback, dcc, html
 
 from components import UPLOAD_STYLE, section_label
 from data import load_abundance, parse_tsv
+
+# new
+from io import StringIO
+import pandas as pd
 
 dash.register_page(__name__, path="/", name="Upload", title="TaxStax - Upload")
 
@@ -52,7 +57,16 @@ layout = dbc.Container(
             children=html.Div(["color legend TSV", html.Br(), html.Small("optional, export from TaxStax plot page")]),
             style=UPLOAD_STYLE, multiple=False,
         ),
+        # new
         _status_row("upload-legend-status", "btn-clear-legend"),
+        dbc.Button("Download combined abundances", id="btn-download-combined", size="sm",
+           color="secondary", outline=True, style={"display": "none", "marginTop": "4px"}),
+        dcc.Download(id="download-combined"),
+        
+        # new2
+        dbc.Button("Download wide format (for Excel)", id="btn-download-wide", size="sm",
+           color="secondary", outline=True, style={"display": "none", "marginTop": "4px", "marginLeft": "4px"}),
+        dcc.Download(id="download-wide"),
 
         html.Div(style={"display": "flex", "alignItems": "center", "justifyContent": "space-between", "marginTop": "20px"}, children=[
             html.Div([
@@ -161,3 +175,53 @@ def clear_legend(n):
     if not n:
         return dash.no_update, dash.no_update, dash.no_update, dash.no_update
     return None, "", None, None
+
+#new 
+# Show the button only when multiple abundance files are loaded
+@callback(
+    Output("btn-download-combined", "style"),
+    Input("store-abundance", "data"),
+    State("upload-abundance", "filename"),
+)
+def toggle_combined_button(data, filenames):
+    visible = bool(data) and isinstance(filenames, list) and len(filenames) > 1
+    return {"display": "inline-block" if visible else "none", "marginTop": "4px"}
+
+@callback(
+    Output("download-combined", "data"),
+    Input("btn-download-combined", "n_clicks"),
+    State("store-abundance", "data"),
+    prevent_initial_call=True,
+)
+def download_combined(n, data):
+    if not n or not data:
+        return dash.no_update
+    df = pd.read_json(StringIO(data), orient="split")
+    cols = [c for c in ("sample", "species", "abundance") if c in df.columns]
+    return dcc.send_data_frame(df[cols].to_csv, "combined_abundances.tsv", sep="\t", index=False)
+
+# new 2
+# Show the wide-format button whenever abundance data is loaded
+@callback(
+    Output("btn-download-wide", "style"),
+    Input("store-abundance", "data"),
+)
+def toggle_wide_button(data):
+    return {"display": "inline-block" if data else "none", "marginTop": "4px", "marginLeft": "4px"}
+
+
+@callback(
+    Output("download-wide", "data"),
+    Input("btn-download-wide", "n_clicks"),
+    State("store-abundance", "data"),
+    prevent_initial_call=True,
+)
+def download_wide(n, data):
+    if not n or not data:
+        return dash.no_update
+    df = pd.read_json(StringIO(data), orient="split")
+    wide = (df.pivot_table(index="species", columns="sample", values="abundance", aggfunc="sum")
+              .fillna(0)
+              .reset_index())
+    wide.columns.name = None
+    return dcc.send_data_frame(wide.to_csv, "abundances_wide.tsv", sep="\t", index=False)
