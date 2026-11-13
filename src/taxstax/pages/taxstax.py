@@ -168,6 +168,14 @@ layout = dbc.Container(
                               style={"fontSize": "0.83rem"}),
 
                     dbc.Checklist(
+                        id="checklist-show-species-labels",
+                        options=[{"label": " Show species labels", "value": "show"}],
+                        value=[],
+                        switch=True,
+                        style={"fontSize": "0.83rem", "marginTop": "10px"},
+                    ),
+
+                    dbc.Checklist(
                         id="checklist-show-total-reads",
                         options=[{"label": " Show total reads", "value": "show"}],
                         value=["show"],
@@ -432,12 +440,13 @@ def mutate_sample_order(up_clicks, down_clicks, reset_clicks, selected_group,
     Input("input-plot-title", "value"),
     Input("checklist-show-total-reads", "value"),
     Input("checklist-show-pct-mapped", "value"),
+    Input("checklist-show-species-labels", "value"),
 )
 def render_plot(
     abundance_json, ss_json, color_map_json, order_json, groups_json, selected_group,
     filter_mode, top_n, min_pct, bar_width,
     font_size, fig_width, fig_height, legend_pos, x_angle, y_title, plot_title,
-    show_total_reads, show_pct_mapped,
+    show_total_reads, show_pct_mapped, show_species_labels,
 ):
     fig_h = int(fig_height or 550)
     fig_w = int(fig_width or 900)
@@ -483,6 +492,8 @@ def render_plot(
                 x=sample_order,
                 y=counts,
                 customdata=counts,
+                text=[sp if count > 0 else "" for count in counts] if show_species_labels else None,
+                textposition="inside" if show_species_labels else None,
                 marker_color=color_map.get(sp, OTHER_COLOR),
                 width=bar_width,
                 hovertemplate=(
@@ -581,11 +592,12 @@ def export_html(n, figure):
     State("dropdown-group", "value"),
     State("checklist-show-total-reads", "value"),
     State("checklist-show-pct-mapped", "value"),
+    State("checklist-show-species-labels", "value"),
     prevent_initial_call=True,
 )
 def save_settings(n, filter_mode, top_n, min_pct, bar_width, palette,
                   fontsize, fig_width, fig_height, legend_pos, xangle, ytitle, plot_title, group,
-                  show_total_reads, show_pct_mapped):
+                  show_total_reads, show_pct_mapped, show_species_labels):
     if not n:
         return dash.no_update
     settings = {
@@ -604,6 +616,7 @@ def save_settings(n, filter_mode, top_n, min_pct, bar_width, palette,
         "group": group,
         "show_total_reads": show_total_reads,
         "show_pct_mapped": show_pct_mapped,
+        "show_species_labels": show_species_labels,
     }
     return dict(content=json.dumps(settings, indent=2), filename="taxstax_settings.json", type="application/json")
 
@@ -624,6 +637,7 @@ def save_settings(n, filter_mode, top_n, min_pct, bar_width, palette,
     Output("input-plot-title", "value"),
     Output("checklist-show-total-reads", "value"),
     Output("checklist-show-pct-mapped", "value"),
+    Output("checklist-show-species-labels", "value"),
     Output("upload-settings-status", "children"),
     Input("upload-settings", "contents"),
     State("upload-settings", "filename"),
@@ -642,14 +656,15 @@ def save_settings(n, filter_mode, top_n, min_pct, bar_width, palette,
     State("input-plot-title", "value"),
     State("checklist-show-total-reads", "value"),
     State("checklist-show-pct-mapped", "value"),
+    State("checklist-show-species-labels", "value"),
     prevent_initial_call=True,
 )
 def load_settings(contents, filename,
                   cur_fm, cur_tn, cur_mp, cur_bw, cur_pal, cur_fs,
                   cur_fw, cur_fh, cur_lp, cur_xa, cur_yt, cur_pt,
-                  cur_str, cur_spm):
+                  cur_str, cur_spm, cur_ssl):
     fallback = (cur_fm, cur_tn, cur_mp, cur_bw, cur_pal, cur_fs,
-                cur_fw, cur_fh, cur_lp, cur_xa, cur_yt, cur_pt, cur_str, cur_spm)
+                cur_fw, cur_fh, cur_lp, cur_xa, cur_yt, cur_pt, cur_str, cur_spm, cur_ssl)
     if not contents:
         return *fallback, ""
     try:
@@ -670,6 +685,7 @@ def load_settings(contents, filename,
             s.get("plot_title", cur_pt),
             s.get("show_total_reads", cur_str),
             s.get("show_pct_mapped", cur_spm),
+            s.get("show_species_labels", cur_ssl),
             f"{filename}",
         )
     except Exception as e:
@@ -695,17 +711,18 @@ def load_settings(contents, filename,
     Output("input-plot-title", "value", allow_duplicate=True),
     Output("checklist-show-total-reads", "value", allow_duplicate=True),
     Output("checklist-show-pct-mapped", "value", allow_duplicate=True),
+    Output("checklist-show-species-labels", "value", allow_duplicate=True),
     Input("btn-clear-settings", "n_clicks"),
     prevent_initial_call=True,
 )
 def clear_settings(n):
     if not n:
-        return (dash.no_update,) * 17
+        return (dash.no_update,) * 18
     return (
         "", None, None,
         "topn", 20, 1, 0.8, "Plotly (default)", 12,
         1200, 800, "right", 45, "Relative abundance (%)", "",
-        ["show"], ["show"],
+        ["show"], ["show"], [],
     )
 
 
